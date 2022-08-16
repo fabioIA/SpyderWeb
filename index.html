@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/anima.css">
+    <link rel="stylesheet" href="estilo/style.css">
+    <title>Spider web</title>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+
+    <header>
+        <div>
+
+            <!-- Título -->
+
+            <div class="titulo">
+                <h1 class="line anim-typewriter">Miranha</h1>
+            </div>
+
+            <!-- Menu -->
+
+            <nav>
+                <a href="#historia">História</a>
+                <a href="#quiz">Quiz</a>
+                <a href="#teiar">Teiar com o aranha</a>
+                <a href="#fale">Fale conosco</a>
+            </nav>
+        </div>
+    </header>
+
+    <div id="teia">
+        <img src="img/teia.gif" alt="Teia">
+    </div>
+
+    <!-- Principal -->
+
+    <main>
+
+        <figure id="aranha">
+            <img src="img/miranha.png" alt="Aranha">
+        </figure>
+
+        
+
+        <section id="historia">
+
+            <img src="img/correndo.gif" alt="Miranha correndo">
+            
+            <!-- História -->
+            
+            <div>
+                <h2>História</h2>
+
+                <p>
+                    Antes de se tornar o Homem-Aranha, Peter Parker levava a 
+                    vida de um adolescente comum. Criado pelos tios após ficar 
+                    órfão quando ainda era um bebê, Peter passou a se interessar 
+                    por tecnologia e ciência desde cedo. Por conta de sua timidez 
+                    e inteligência, não demorou para ser alvo de bullying na escola.
+                </p>
+            </div>
+
+        </section>
+
+        <section id="tudo">
+
+            <!-- Missão -->
+            
+            <section id="missao">
+                <fieldset>
+
+                    <div>
+                        <h2>Missão</h2>
+
+                        <p>
+                            Temos como missão entreter o usuário, fazer seus olhos 
+                            brilharem e suas pupilas dilatarem, com animações e muito 
+                            brilho. Também buscamos informar os usuários com uma mensagem 
+                            clara, a história do super-herói Homem Aranha, e achar a Mary Jane.
+                        </p>
+                    </div>
+
+                </fieldset>
+            </section>
+
+            <figure>
+                <img src="img/cagano.gif" alt="Miranha Tremendo">
+            </figure>
+
+            <section id="visao">
+
+                <!-- Valor -->
+
+                <fieldset>
+
+                    <div>
+                        <h2>Visão</h2>
+
+                        <p>
+                            Como não há, ainda, um site do incrível homem aranha, 
+                            queremos ser os pioneiros, trazer o reconhecimento que nosso herói
+                            merece. Buscamos ser referência nos sites relacionados ao homem 
+                            aranha, trazendo a melhor experiência e conteúdo sobre o herói. 
+                        </p>
+                    </div>
+
+                </fieldset>
+            </section>
+        </section>
+
+        <section id="tudo2">
+            <section>
+
+                <!-- Valor -->
+
+                <fieldset id="valor">
+
+                    <div>
+                        <h2>Valores</h2>
+
+                        <p>
+                            <h4>O que é uma empresa sem valores? Nada! Por isso, temos os nossos:</h4>
+                            
+                            <ul>
+                                <li>Qualidade;</li>
+                                <li>Respeito;</li>
+                                <li>Satisfação dos nossos usuários;</li>
+                                <li>Criatividade;</li>
+                                <li>Flexível a mudanças;</li>
+                                <li>Honestidade;</li>
+                                <li>Clareza e objetividade.</li>
+                            </ul> 
+                        </p>
+                    </div>
+
+                </fieldset>
+            </section>
+
+            <section id="quiz">
+                <div class="quiz">
+                    <h1>Descubra seu metade aranha</h1>
+            
+                    <div class="entradas">
+            
+                        <!-- input da idade -->
+                        <span>Digite sua idade:</span>
+                        <input id="idade" min="1" max="234" type="number" value="" placeholder="0"><br>
+            
+                        <!-- Escolha do transporte -->
+                        <span>Qual transporte você prefere?</span>
+                        <select id="transporte">
+            
+                            <option value="transportes" data-default disabled selected>Transportes</option>
+                            <option value="skate">Skate</option>
+                            <option value="bicleta">Bicicleta</option>
+                            <option value="hoverboard">Hoverboard</option>
+            
+                        </select><br>
+            
+                        <!-- Escolha da música -->
+                        <span>Qual seu estilo de música favorito?</span>
+                        <select id="musica">
+            
+                            <option value="musica" data-default disabled selected>Músicas</option>
+                            <option value="eletronica">Eletrônica</option>
+                            <option value="rock">Rock</option>
+                            <option value="classica">Clássica</option>
+            
+                        </select>
+                    
+                    </div>
+            
+                    <!-- Div do resultado do quiz -->
+                    <div id="resultado"></div><br>
+            
+                    <!-- Botão de enviar -->
+                    <input id="enviar" type="submit" onclick="document.getElementById('idade').value !== '' && document.getElementById('musica').value !== 'musica' && document.getElementById('transporte').value != 'transportes' ? Aranha() : alert('Preencha todos os campos')">
+                    
+                </div>
+            
+            </section>
+
+            <section>
+
+                <!-- Tabela -->
+                    <div id="teiar">
+
+                        <h1>Teiar com o Aranha</h1>
+
+                        <!-- Formulário de entradas -->
+                        <form>
+
+                            <div class="in">
+                            
+                                <!-- Entrada do nome  -->
+                                <span>Nome:</span>
+                                <input type="text" id="pesquisa"><br>
+
+                                <div class="selects">
+                                    <!-- Entrada do tipo do filme  -->
+                                    <span>Tipo</span>
+                                    <select name="tipo" id="tipo">
+                                        <option value="" data-default disabled selected></option>
+                                        <option value="Filme">Filme</option>
+                                        <option value="Série">Série</option>
+                                    </select>
+
+                                    <!-- Entrada da fase do filme  -->
+                                    <span>Fase:</span>
+                                    <select name="fases" id="fases">
+                                        <option value="" data-default disabled selected></option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+
+                                    <!-- Entrada com a classificação do filme -->
+                                    <span>Classificação Indicativa:</span>
+                                    <select name="classificacao" id="classificacao">
+                                        <option value="" data-default disabled selected></option>
+                                        <option value="l">L</option>
+                                        <option value="10">10</option>
+                                        <option value="12">12</option>
+                                        <option value="14">14</option>
+                                        <option value="16">16</option>
+                                        <option value="18">+18</option>
+                                    </select>
+
+                                    <!-- Entrada com o genêro do filme -->
+                                
+                                    <span>Genêro:</span>
+                                    <select name="g1" id="g1">
+                                        <option value="" data-default disabled selected></option>
+                                        <option value="Fantasia">Fantasia</option>
+                                        <option value="Ação">Ação</option>
+                                        <option value="Aventura">Aventura</option>
+                                        <option value="Ficção Científica">Ficção Científica</option>
+                                        <option value="Comédia">Comédia</option>
+                                        <option value="Amizade">Amizade</option>
+                                        <option value="Suspense">Suspense</option>
+                                    </select>
+
+                                    <span>Genêro:</span>
+                                    <select name="g2" id="g2">
+                                        <option value="" data-default disabled selected></option>
+                                        <option value="Fantasia">Fantasia</option>
+                                        <option value="Ação">Ação</option>
+                                        <option value="Aventura">Aventura</option>
+                                        <option value="Ficção Científica">Ficção Científica</option>
+                                        <option value="Comédia">Comédia</option>
+                                        <option value="Amizade">Amizade</option>
+                                        <option value="Suspense">Suspense</option>
+                                    </select>
+
+                                    <span>Genêro:</span>
+                                    <select name="g3" id="g3">
+                                        <option value="" data-default disabled selected></option>
+                                        <option value="Fantasia">Fantasia</option>
+                                        <option value="Ação">Ação</option>
+                                        <option value="Aventura">Aventura</option>
+                                        <option value="Ficção Científica">Ficção Científica</option>
+                                        <option value="Comédia">Comédia</option>
+                                        <option value="Amizade">Amizade</option>
+                                        <option value="Suspense">Suspense</option>
+                                    </select>
+                                </div>
+                            
+                            </div>
+
+                            <!-- Div onde irá aparecer a tabela  -->
+                            <div id="tabela"></div> 
+
+                            <!-- Botões de enviar e limpar  -->
+                            <div id="btns">
+                                <input type="button" value="Buscar" id="buscar">
+                                <input type="reset" onclick="document.getElementById('mesa').parentNode.removeChild(document.getElementById('mesa'))">
+                            </div>
+
+                        </form>
+                    </div>
+
+            </section>
+        </section>
+
+        <aside>
+            <section id="formulario">
+                <div class="container">
+                    <form action="https://formsubmit.co/0000913367@senaimgaluno.com.br" method="post">
+                        <input id="tirar" type="button" value="x">
+                        
+                        <h1>Mensagem</h1>
+                        <br>
+        
+                        <div id="entradas">
+                            <span for="name">Nome:</span>
+                            <input id="in" type="text" placeholder="&nbsp;&nbsp;Nome" name="name" required>
+                            <br>
+                            <span for="email">Email</span>
+                            <input id="in" type="email" placeholder="&nbsp;&nbsp;E-mail" name="email" required>
+                        </div>
+                        <br>
+                        <label id="text" for="message">Mensagem</label><br>
+
+                        <textarea type="hidden" name="message" cols="30" rows="10" placeholder="Diga o que queres dizer"></textarea>
+
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html#fale">
+                        
+                        <div id="saidas">
+                            <input type="reset">
+                            <input type="submit" onclick="if(document.getElementById('in').value !== '' ) {alert('Obrigado pela mensagem, retornaremos em breve')}">
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </aside>
+
+    </main>
+
+    <!-- Fim -->
+
+    <footer>
+
+        <!-- Fale conosco -->
+
+        <section>
+
+            <div class="pe">
+                <img id="marry" src="img/aranha2.png" alt="Aranha">
+
+                <div id="fale">
+
+                    <h3>Fale bem ou fale mal, mas fale conosco. </h3>
+
+                    <p>
+                        Um site mais bonito são os seus olhos com 
+                        mais brilho.
+                    </p>
+
+                    <input type="button" value="Fale conosco" id="mostrar">
+                <div>
+            </div>
+
+        </section>
+
+        <section>
+
+            <div id="footer">
+               DESENOLVIDO POR: Fabao, Liliza, Nicolau @copyright - - - github.com/fabioIA
+            </div>
+
+        </section>
+        
+    </footer>
+
+    <script defer src="js/script.js"></script>
+    <script src="js/quiz.js"></script>
+    <script type="module" src="js/tabela.js"></script>
+    <script type="module" src="js/busca.js"></script>
+    
+</body>
+</html>
