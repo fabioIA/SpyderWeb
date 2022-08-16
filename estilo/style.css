@@ -269,15 +269,41 @@ mark {
 .selects {
     margin-top: 2em;
     margin-left: -1.5em;
+    display: flex;
 }
 
 .selects > span {
     margin-left: 1.5em;
     margin-top: auto;
     margin-bottom: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
-#add {
+.selects > select {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#generos {
+    display: flex;
+}
+
+#generos > span, #generos > select {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1em;
+}
+
+#genero3 {
+    margin-top: -15px;
+}
+
+#genero3 > span, #genero3 > select {
+    margin-left: 1em;
+}
+
+#add, #sub {
     width: 3.5vh;
     height: 3.5vh;
     margin-left: 1em;
@@ -344,7 +370,7 @@ tr:hover {
     cursor: pointer;
 }
 
-#add:hover {
+#add:hover, #sub:hover {
     background-color: rgba(240, 248, 255, 0.442);
     transform: scale(1.2);
 }

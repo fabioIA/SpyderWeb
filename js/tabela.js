@@ -346,22 +346,81 @@ export let video = [
 
 ];
 
+// Adiciona novas entradas de genêro
+document.getElementById('add').addEventListener('click', function() {
+
+    // Vai tentar adicionar o genero 3 se não conseguir adiciona o 2
+    try {
+        document.getElementById('genero3').innerHTML = '<span>Genêro:</span><select name="g3" id="g3"><option value=""></option><option value="Fantasia">Fantasia</option><option value="Ação">Ação</option><option value="Aventura">Aventura</option><option value="Ficção Científica">Ficção Científica</option><option value="Comédia">Comédia</option><option value="Amizade">Amizade</option><option value="Suspense">Suspense</option></select>';
+        document.getElementById('add').parentNode.removeChild(document.getElementById('add'));
+        // document.getElementById('generos').innerHTML += '<input id="sub" type="button" value="-"/>';
+        
+    } catch (error) {
+        document.getElementById('generos').innerHTML += '<span>Genêro:</span><select name="g2" id="g2"><option value=""></option><option value="Fantasia">Fantasia</option><option value="Ação">Ação</option><option value="Aventura">Aventura</option><option value="Ficção Científica">Ficção Científica</option><option value="Comédia">Comédia</option><option value="Amizade">Amizade</option><option value="Suspense">Suspense</option></select><div id="genero3"></div>';
+    }
+
+})
+
 // Chama essa função toda vez que clicar no botão de busca
 document.getElementById('buscar').onclick = () => {
+    console.log('btn')
 
     // Verifica se uns dos selects foi preenchido
-    if(document.getElementById('tipo').value !== "" | document.getElementById('fases').value !== "" | document.getElementById('classificacao').value !== "" | document.getElementById('g1').value !== "" | document.getElementById('g2').value !== "" | document.getElementById('g3').value !== "") {
+    if(document.getElementById('tipo').value !== "" | document.getElementById('fases').value !== "" | document.getElementById('classificacao').value !== "" | document.getElementById('g1').value !== "") {
 
         // Cria uma tabela
         document.getElementById('tabela').innerHTML = '<table id="mesa" border="2"><thead><tr><th>N°</th><th>Nome</th><th>Tipo</th><th>Fase</th><th>Classificação</th><th colspan="3">Genêros</th></tr></thead></table>';
-
-    }else {
-        // Mensagem caso usuário não tenha filtrado
-        alert("Filtre antes de buscar");
+        Main();
         return;
 
-    }
+    }else {
+        console.log('senão')
 
+        // Tenta adicionar a tabela caso o g2 ou g3 estajam preenchidos
+        try {
+            if(document.getElementById('g3').value !== '') {
+                document.getElementById('tabela').innerHTML = '<table id="mesa" border="2"><thead><tr><th>N°</th><th>Nome</th><th>Tipo</th><th>Fase</th><th>Classificação</th><th colspan="3">Genêros</th></tr></thead></table>';
+                Main();
+
+                console.log('G3');
+
+                return;
+
+            }else if(document.getElementById('g2').value !== '') {
+                document.getElementById('tabela').innerHTML = '<table id="mesa" border="2"><thead><tr><th>N°</th><th>Nome</th><th>Tipo</th><th>Fase</th><th>Classificação</th><th colspan="3">Genêros</th></tr></thead></table>';
+                Main();
+                
+                console.log('G2');
+
+                return;
+
+            }
+        } catch (error) {
+
+            try {
+                if(document.getElementById('g2').value !== '') {
+                    document.getElementById('tabela').innerHTML = '<table id="mesa" border="2"><thead><tr><th>N°</th><th>Nome</th><th>Tipo</th><th>Fase</th><th>Classificação</th><th colspan="3">Genêros</th></tr></thead></table>';
+                    Main();
+                    
+                    console.log('G2');
+
+                    return;
+
+                }
+
+            } catch (error) {
+                // Mensagem caso usuário não tenha filtrado
+                alert("Filtre antes de buscar");
+
+                return;
+
+            }
+            
+        }
+    }
+}
+
+function Main() {
     // Definindo variável e constânte
     let t = 0;
     const array = [];
@@ -380,28 +439,41 @@ document.getElementById('buscar').onclick = () => {
     if(document.getElementById('classificacao').value !== "") {
         t++;
         Junta(Class(), array);
-       
+    
     }
     if(document.getElementById('g1').value !== "") {
         t++;
         Junta(Gen(document.getElementById('g1').value), array);
 
     }
-    if(document.getElementById('g2').value !== "") {
-        Junta(Gen(document.getElementById('g2').value), array);
-        t++;
 
-    } 
-    if(document.getElementById('g3').value !== "") {
-        t++;
-        Junta(Gen(document.getElementById('g3').value), array);
+    try {
 
+        if(document.getElementById('g2').value !== "") {
+            Junta(Gen(document.getElementById('g2').value), array);
+            t++;
+
+        } 
+    } catch (error) {
+        null;
     }
+    
+    try {
 
+        if(document.getElementById('g3').value !== "") {
+            t++;
+            Junta(Gen(document.getElementById('g3').value), array);
+
+        }
+    } catch (error) {
+        null;
+        
+    }
+    
     // Chama a função que organiza a array
     Organiza(array, t);
-        
 }
+        
 
 // Junta todas as arrays em só uma
 function Junta(valor, array) {
